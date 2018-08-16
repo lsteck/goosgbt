@@ -27,3 +27,17 @@ For details on the Openfire container see: https://hub.docker.com/r/gizmotronic/
 
 ## Configure workspace
 
+From root folder run mavin command `mvn install`
+
+Launch idea `idea .`
+
+Open Project settings
+  * update project sdk to 1.8
+
+Run the app
+  open **src/main/java/com/root/bind/App.js** and run App.main()
+  
+Run the test
+  open **test/java/com/root/bind/AuctionSniperEndToEndTest.js** and run the test
+  
+  
