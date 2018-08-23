@@ -1,34 +1,42 @@
 package com.root.bind;
 
+/*
+*
+import org.jmock.Expectations;
+import org.jmock.auto.Mock;
+import org.jmock.integration.junit4.JUnitRuleMockery;
+import org.junit.Rule;
+* */
+
 import org.junit.Test;
 
-public class AuctionSniperEndToEndTest {
+import static org.assertj.core.api.Assertions.*;
 
-//  private final FakeAuctionServer auction = new FakeAuctionServer("item-54321");
-//  private final ApplicationRunner application = new ApplicationRunner();
+public class AuctionSniperEndToEndTest {
+  private final FakeAuctionServer auction = new FakeAuctionServer("item-54321");
+  private final ApplicationRunner application = new ApplicationRunner();
 
   @Test
-  public void canary(){
-    assert(Boolean.TRUE).equals(Boolean.TRUE);
+  public void canary() {
+    assertThat(true).isEqualTo(true);
   }
 
   @Test
   public void sniperJoinsAuctionUntilAuctionCloses() throws Exception {
-//    auction.startSellingItem();
-//    application.startBiddingIn(auction);
-//    auction.hasReceivedJoinRequestFromSniper();
-//    auction.announceClosed();
-//    application.showsSniperHasLostAuction();
+    auction.startSellingItem();
+    application.startBiddingIn(auction);
+    auction.hasReceivedJoinRequestFromSniper();
+    auction.announceClosed();
+    application.showsSniperHasLostAuction();
   }
-  
-  // Additional cleanup
+
   //@After
   public void stopAuction() {
-//    auction.stop();
+    auction.stop();
   }
 
   //@After
   public void stopApplication() {
-//    application.stop();
+    auction.stop();
   }
 }
