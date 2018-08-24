@@ -1,7 +1,16 @@
 package com.larry.steck.goos.auction.fakes;
 
 public class FakeAuctionServer {
-  public FakeAuctionServer(final String itemId) {}
+  private final String itemId;
+
+  public FakeAuctionServer(final String itemId) {
+    this.itemId = itemId;
+  }
+
+  public String getItemId() {
+    return itemId;
+  }
+
   public void startSellingItem() {}
   public void hasReceivedJoinRequestFromSniper() {}
   public void announceClosed() {}
