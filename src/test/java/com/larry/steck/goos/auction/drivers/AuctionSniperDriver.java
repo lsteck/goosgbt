@@ -6,4 +6,6 @@ public class AuctionSniperDriver {
 
   public void showsSniperStatus(String statusJoining) {
   }
+
+  public void dispose() {}
 }
