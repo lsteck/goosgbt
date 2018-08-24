@@ -9,6 +9,7 @@ import org.junit.Rule;
 * */
 
 import com.larry.steck.goos.auction.fakes.FakeAuctionServer;
+import com.larry.steck.goos.auction.helpers.ApplicationRunner;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
