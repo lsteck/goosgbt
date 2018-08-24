@@ -8,6 +8,7 @@ public class ApplicationRunner {
   public static final String SNIPER_PASSWORD = "sniper";
   private static final String XMPP_HOSTNAME = "localhost";
   private static final int LOWER_TIMEOUT_VALUE = 1000;
+  private static final String STATUS_JOINING = "joining";
   private AuctionSniperDriver driver;
 
   public void startBiddingIn(final FakeAuctionServer auction) {
