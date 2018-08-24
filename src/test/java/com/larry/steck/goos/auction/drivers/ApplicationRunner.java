@@ -7,6 +7,7 @@ public class ApplicationRunner {
   public static final String SNIPER_ID = "sniper";
   public static final String SNIPER_PASSWORD = "sniper";
   private static final String XMPP_HOSTNAME = "localhost";
+  private static final int LOWER_TIMEOUT_VALUE = 1000;
   private AuctionSniperDriver driver;
 
   public void startBiddingIn(final FakeAuctionServer auction) {
@@ -28,7 +29,7 @@ public class ApplicationRunner {
 
     thread.setDaemon(true);
     thread.start();
-    driver = new AuctionSniperDriver(1000); // 4
+    driver = new AuctionSniperDriver(LOWER_TIMEOUT_VALUE); // 4
     driver.showsSniperStatus(STATUS_JOINING); // 5
   }
 
