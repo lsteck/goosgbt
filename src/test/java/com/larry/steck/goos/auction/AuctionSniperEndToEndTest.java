@@ -8,8 +8,10 @@ import org.jmock.integration.junit4.JUnitRuleMockery;
 import org.junit.Rule;
 * */
 
+import org.junit.*;
+
 import com.larry.steck.goos.auction.fakes.FakeAuctionServer;
-import org.junit.Test;
+import com.larry.steck.goos.auction.drivers.ApplicationRunner;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -31,13 +33,13 @@ public class AuctionSniperEndToEndTest {
     application.showsSniperHasLostAuction();
   }
 
-  //@After
+  @After
   public void stopAuction() {
     auction.stop();
   }
 
-  //@After
+  @After
   public void stopApplication() {
-    auction.stop();
+    application.stop();
   }
 }
