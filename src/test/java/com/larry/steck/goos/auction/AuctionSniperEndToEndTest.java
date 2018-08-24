@@ -11,7 +11,7 @@ import org.junit.Rule;
 import org.junit.*;
 
 import com.larry.steck.goos.auction.fakes.FakeAuctionServer;
-import com.larry.steck.goos.auction.helpers.ApplicationRunner;
+import com.larry.steck.goos.auction.drivers.ApplicationRunner;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
