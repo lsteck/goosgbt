@@ -86,13 +86,6 @@
       <version>2.8.4</version>
     </dependency>
 
-    <!-- https://mvnrepository.com/artifact/com.googlecode.windowlicker/windowlicker-swing -->
-    <dependency>
-        <groupId>com.googlecode.windowlicker</groupId>
-        <artifactId>windowlicker-swing</artifactId>
-        <version>r268</version>
-    </dependency>
-
     <dependency>
       <groupId>info.cukes</groupId>
       <artifactId>cucumber-java</artifactId>
@@ -105,6 +98,20 @@
       <artifactId>cucumber-junit</artifactId>
       <version>RELEASE</version>
       <scope>test</scope>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/com.googlecode.windowlicker/windowlicker-swing -->
+    <dependency>
+        <groupId>com.googlecode.windowlicker</groupId>
+        <artifactId>windowlicker-swing</artifactId>
+        <version>r268</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.igniterealtime.smack/smack -->
+    <dependency>
+        <groupId>org.igniterealtime.smack</groupId>
+        <artifactId>smack</artifactId>
+        <version>3.2.1</version>
     </dependency>
   </dependencies>
   
