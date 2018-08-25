@@ -23,6 +23,10 @@ public class Main {
   private static final int ARG_ITEM_ID = 3;
 
   private MainWindow ui;
+  public Main() throws Exception {
+    startUserInterface();
+  }
+
   public static void main(String... args) throws Exception {
     Main main = new Main();
     XMPPConnection connection = connectTo(
@@ -47,7 +51,7 @@ public class Main {
   private static XMPPConnection connectTo(
       String hostname, String username, String password)
       throws XMPPException {
-    
+
     XMPPConnection connection = new XMPPConnection(hostname);
     connection.connect();
     connection.login(username, password, AUCTION_RESOURCE);
@@ -56,10 +60,6 @@ public class Main {
 
   private static String auctionId(String itemId, XMPPConnection connection) {
     return String.format(AUCTION_ID_FORMAT, itemId, connection.getServiceName());
-  }
-  
-  public Main() throws Exception {
-    startUserInterface();
   }
 
   private void startUserInterface() throws Exception {
