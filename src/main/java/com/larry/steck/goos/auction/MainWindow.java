@@ -22,7 +22,7 @@ public class MainWindow extends JFrame {
   }
 
   public void showStatus(String status) {
-    sniperStatus.setText(status);;
+    sniperStatus.setText(status);
   }
 
   private static JLabel createLabel(String initialText) {

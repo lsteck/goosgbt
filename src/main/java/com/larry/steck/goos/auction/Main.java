@@ -14,7 +14,8 @@ public class Main {
 
   public static final String AUCTION_RESOURCE = "Auction";
   public static final String ITEM_ID_AS_LOGIN = "auction-%s";
-  public static final String AUCTION_ID_FORMAT =
+
+      public static final String AUCTION_ID_FORMAT =
       ITEM_ID_AS_LOGIN + "@%s/" + AUCTION_RESOURCE;
 
   private static final int ARG_HOSTNAME = 0;
@@ -23,7 +24,7 @@ public class Main {
   private static final int ARG_ITEM_ID = 3;
 
   private MainWindow ui;
-  @SuppressWarnings("unused") private Chat notToBeGCd;
+  private Chat notToBeGCd;
   public Main() throws Exception {
     startUserInterface();
   }
@@ -37,7 +38,7 @@ public class Main {
             args[ARG_USERNAME],
             args[ARG_PASSWORD]
         ),
-      args[ARG_ITEM_ID]
+        args[ARG_ITEM_ID]
     );
   }
 
