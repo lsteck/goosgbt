@@ -6,6 +6,7 @@ import com.larry.steck.goos.auction.fakes.FakeAuctionServer;
 public class ApplicationRunner {
   public static final String SNIPER_ID = "sniper";
   public static final String SNIPER_PASSWORD = "sniper";
+  public static final String SNIPER_XMPP_ID = "bidder";
 
   private static final String XMPP_HOSTNAME = "localhost";
   private static final int LOWER_TIMEOUT_VALUE = 100;
