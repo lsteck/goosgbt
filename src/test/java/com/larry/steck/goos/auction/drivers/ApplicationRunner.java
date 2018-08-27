@@ -1,6 +1,7 @@
 package com.larry.steck.goos.auction.drivers;
 
 import com.larry.steck.goos.auction.Main;
+import com.larry.steck.goos.auction.MainWindow;
 import com.larry.steck.goos.auction.fakes.FakeAuctionServer;
 
 public class ApplicationRunner {
@@ -10,8 +11,6 @@ public class ApplicationRunner {
 
   private static final String XMPP_HOSTNAME = "localhost";
   private static final int LOWER_TIMEOUT_VALUE = 100;
-  private static final String STATUS_JOINING = "Joining";
-  private static final String STATUS_LOST = "Lost";
 
   private AuctionSniperDriver driver;
   public void startBiddingIn(final FakeAuctionServer auction) {
@@ -34,11 +33,15 @@ public class ApplicationRunner {
     thread.setDaemon(true);
     thread.start();
     driver = new AuctionSniperDriver(LOWER_TIMEOUT_VALUE); // 4
-    driver.showsSniperStatus(STATUS_JOINING); // 5
+    driver.showsSniperStatus(MainWindow.STATUS_JOINING); // 5
+  }
+  
+  public void hasShownSniperIsBidding() {
+    driver.showsSniperStatus(MainWindow.STATUS_BIDDING); //6
   }
 
   public void showsSniperHasLostAuction() {
-    driver.showsSniperStatus(STATUS_LOST); //6
+    driver.showsSniperStatus(MainWindow.STATUS_LOST); //6
   }
   public void stop() {
     if (driver != null) {
