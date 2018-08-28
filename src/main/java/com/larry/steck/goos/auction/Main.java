@@ -7,6 +7,8 @@ import org.jivesoftware.smack.XMPPException;
 import org.jivesoftware.smack.packet.Message;
 
 import javax.swing.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class Main {
   public static final String MAIN_WINDOW_NAME = "Auction Sniper Main";
@@ -49,6 +51,7 @@ public class Main {
   }
 
   private void joinAuction(XMPPConnection connection, String itemId) throws XMPPException {
+    disconnectWhenUICloses(connection);
     final Chat chat = connection.getChatManager().createChat(
       auctionId(itemId, connection),
       new MessageListener() {
@@ -63,6 +66,15 @@ public class Main {
     );
     this.notToBeGCd = chat;
     chat.sendMessage(JOIN_COMMAND_FORMAT);
+  }
+
+  private void disconnectWhenUICloses(final XMPPConnection connection) {
+    ui.addWindowListener(new WindowAdapter() {
+      @Override
+      public void windowClosed(WindowEvent e){
+        connection.disconnect();
+      }
+    });
   }
 
   private static XMPPConnection connectTo(
